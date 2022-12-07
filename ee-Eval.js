@@ -1,0 +1,10 @@
+document.getElementsByName("q1_1").item(0).click();
+document.getElementsByName("q1_2").item(0).click();
+document.getElementsByName("q1_3").item(0).click();
+document.getElementsByName("q1_4").item(0).click();
+document.getElementsByName("q1_5").item(0).click();
+document.getElementsByName("q1_6").item(0).click();
+document.getElementsByName("q1_7").item(0).click();
+document.getElementsByName("q1_8").item(0).click();
+document.getElementsByName("q1_9").item(0).click();
+document.getElementsByName("q2_1").item(0).click();

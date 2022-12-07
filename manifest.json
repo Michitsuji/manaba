@@ -1,0 +1,88 @@
+{
+  "manifest_version": 2,
+  "name": "Manaba+R改",
+  "version": "1.0",
+  "description": "Yuta Michitsuji",
+  "author": "Kamichitsuji",
+  "icons": {
+    "128": "icons/icon128.png",
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png"
+  },
+  "permissions": [
+    "alarms",
+    "storage",
+    "https://ct.ritsumei.ac.jp/ct/*",
+    "webRequest",
+    "webRequestBlocking"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://ct.ritsumei.ac.jp/ct/home_course",
+        "https://ct.ritsumei.ac.jp/ct/home"
+      ],
+      "run_at": "document_idle",
+      "js": [
+        "injectTaskList.js"
+      ]
+    },
+    {         
+      "matches": [
+      "https://ct.ritsumei.ac.jp/ct/course*_report_*"
+      ],
+      "css": [
+      "style.css"
+      ],
+      "js": [
+      "drop-file.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://ct.ritsumei.ac.jp/ct/*"
+      ],
+      "run_at": "document_idle",
+      "js": [
+        "main.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://ct.ritsumei.ac.jp/ct/home_course"
+      ],
+      "js": [
+        "jquery-3.6.1.min.js","time.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://sso.ritsumei.ac.jp/siteminderagent/forms/login*"
+      ],
+      "js": [
+        "login.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://webauth.ritsumei.ac.jp/fs/customwebauth/login*"
+      ],
+      "js": [
+        "wifi-login.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.ee.ritsumei.ac.jp/present/pres_eval.htm"
+      ],
+      "js": [
+        "ee-Eval.js"
+      ]
+    }
+
+  ],
+  "background": {
+    "service_worker": "background-script.js"
+  }
+}
